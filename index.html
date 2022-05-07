@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Pong Game</title>
+</head>
+
+<body>
+
+    <div id="game">
+        <label id="timer"></label>
+        <div class="points">
+            <label id="player1-points">0</label>
+            <label id="middle">X</label>
+            <label id="player2-points">0</label>
+        </div>
+        <div id="buff"></div>
+        <div id="ball"></div>
+        <div id="player1" class="barra esquerda"></div>
+        <div id="player2" class="barra direita"> </div>
+        <button id="btn-pause">Pausar</button>
+    </div>
+
+    <div id="player1-side" class="emojies"></div>
+    <div id="player2-side" class="emojies"></div>
+
+    <div id="modal">
+        <div id="container">
+            <form id="definitions-form">
+                <h2>Definições</h2>
+
+                <div class="player1-type">
+                    <fieldset>
+                        <legend>VS</legend>
+                        <h4>Player 1</h4>
+                        <div>
+                            <input type="radio" id="op1-player1-def" name="ops-p1" value="player">
+                            <label for="op1-player1-def">Jogador</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="op2-player1-def" name="ops-p1" value="comp" checked>
+                            <label for="op2-player1-def">Computador</label>
+                        </div>
+                        <h4>Player 2</h4>
+                        <div>
+                            <input type="radio" id="op1-player2-def" name="ops-p2" value="player">
+                            <label for="op1-player2-def">Jogador</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="op2-player2-def" name="ops-p2" value="comp" checked>
+                            <label for="op2-player2-def">Computador</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="player1-type"></div>
+                <button id="btn-defs">Avançar</button>
+                <div class="prog">
+                    <input type="radio" checked>
+                    <input type="radio" disabled>
+                </div>
+            </form>
+
+            <div id="ready-container">
+                <h2>Pronto?</h2>
+                <button id="btStart">Iniciar</button>
+                <button id="btn-settings">Configurações</button>
+                <button id="btn-back">Voltar</button>
+                <div class="prog">
+                    <input type="radio" disabled>
+                    <input type="radio" checked>
+                </div>
+            </div>
+
+        </div>
+        <div id="configs">
+            <h2>Configurações</h2>
+            <fieldset>
+                <legend>Velocidade</legend>
+
+                <div id="speed-settings" class="settings">
+                    <div>
+                        <label for="player1-speed">Player 1</label>
+                        <input id="player1-speed" onfocus="this.select();" type="number" min="1" value="7">
+                    </div>
+                    <div>
+                        <label for="player2-speed">Player 2</label>
+                        <input id="player2-speed" onfocus="this.select();" type="number" min="1" value="7">
+                    </div>
+                    <div>
+                        <label for="ball-speed">Bola</label>
+                        <input id="ball-speed" onfocus="this.select();" type="number" min="1" value="7">
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Teclas</legend>
+                <div id="keyboard-settings" class="settings">
+                    <label for="">Player 1</label>
+                    <div class="keys-settings">
+                        <div>
+                            <label for="player1-keyup">Subir</label>
+                            <input id="player1-keyup" onfocus="this.select();" type="text" value="w">
+                        </div>
+
+                        <div>
+                            <label for="player1-keydown">Descer</label>
+                            <input id="player1-keydown" onfocus="this.select();" type="text" value="s">
+                        </div>
+
+                        <div>
+                            <label for="player1-keypause">Congelar</label>
+                            <input id="player1-keypause" onfocus="this.select();" type="text" value="a">
+                        </div>
+                    </div>
+
+
+                    <label for="">Player 2</label>
+
+                    <div class="keys-settings">
+                        <div>
+                            <label for="player2-keyup">Subir</label>
+                            <input id="player2-keyup" onfocus="this.select();" type="text" value="arrowup">
+                        </div>
+
+                        <div>
+                            <label for="player2-keydown">Descer</label>
+                            <input id="player2-keydown" onfocus="this.select();" type="text" value="arrowdown">
+                        </div>
+
+                        <div>
+                            <label for="player2-keypause">Congelar</label>
+                            <input id="player2-keypause" onfocus="this.select();" type="text" value="arrowleft">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <button id="btn-save-configs">Salvar</button>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+        
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+:root {
+    --blueColor: rgb(0, 81, 255);
+    --purpleColor: rgb(83, 9, 255);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--purpleColor);
+}
+
+button{
+    color: whitesmoke;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.points {
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    font-size: 50px;
+    color: rgb(139, 139, 139);
+}
+
+.points label {
+    margin: 0 60px;
+}
+#middle {
+    font-size: 25px;
+    color: var(--blueColor);
+}
+
+.prog {
+    position: absolute;
+    bottom: 10px;
+    width: 84%;
+}
+
+#ready-container {
+    display: none;
+}
+
+#definitions-form {
+    display: block;
+}
+
+#definitions-form fieldset {
+    border: 1px solid var(--blueColor);
+    text-align: left;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px 15px;
+}
+
+#definitions-form fieldset div {
+    margin: 10px;
+}
+
+#btn-defs {
+    position: absolute;
+    height: 60px;
+    width: 100px;
+    font-size: 19px;
+    background-color: var(--blueColor);
+    right: 60px;
+    bottom: 50px;
+}
+
+#ready-container button {
+    width: 100%;
+    transition: 200ms;
+    margin: 10px 0;
+}
+
+#btStart {
+    background-color: var(--purpleColor);
+}
+
+#btn-settings {
+    background-color: var(--blueColor);
+}
+
+#btn-back{
+    background-color: rgb(226, 146, 53);
+}
+
+#btStart:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.479);
+}
+
+#configs{
+    display: none;
+    position: relative;
+    background-color: whitesmoke;
+    margin: 5% auto;
+    height: 70%;
+    width: 35vw;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#configs input{
+    width: 50px;
+    outline: none;
+}
+
+#configs fieldset{
+    margin: 20px 0;
+}
+
+#configs .settings{
+    width: 50%;
+    text-align: right;
+    margin: 10px auto;
+}
+
+#configs #speed-settings{
+    width: 30%;
+}
+
+#configs #keyboard-settings{
+    text-align: left;
+}
+
+#configs #keyboard-settings div{
+    margin-left: 20px;
+}
+
+#configs #keyboard-settings div label, input{
+    font-size: 13.5px;
+}
+
+#configs #keyboard-settings .keys-settings{
+    text-align: right;
+    width: 60%;
+}
+
+.keys-settings input:focus{
+    user-select: all;
+}
+
+
+#btn-save-configs{
+    position: absolute;
+    bottom: 2%;
+    background-color: var(--purpleColor);
+    width: 100px;
+    transform: translateX(-50%);
+}
+
+#game {
+    position: relative;
+    overflow: hidden;
+    width: 88vw;
+    height: 88vh;
+    background-color: rgba(243, 243, 243, 0.877);
+    margin: 35px auto;
+    border-radius: 5px;
+}
+
+#timer{
+    position: absolute;
+    font-size: 80px;
+    top: 40%;
+}
+
+#buff{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: purple;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    animation: color 4s infinite linear alternate;
+}
+
+@keyframes color {
+    20%{
+        background-color: rgb(243, 78, 13);
+    }
+    40%{
+        background-color: rgb(6, 213, 240);
+    }
+    60%{
+        background-color: rgb(21, 243, 13);
+    }
+    80%{
+        background-color: rgb(13, 47, 243);
+    }
+    100%{
+        background-color: rgb(243, 13, 174);
+    }
+}
+
+#ball {
+    display: none;
+    position: absolute;
+    top: 240px;
+    left: 475px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(112, 112, 112);
+    border-radius: 50%;
+}
+
+@keyframes intence {
+    from{
+        box-shadow: 0 0 14px rgb(255, 8, 8);
+    }to{
+        box-shadow: 0 0 35px rgb(255, 8, 8);
+    }
+}
+
+.barra {
+    position: absolute;
+    width: 20px;
+    height: 140px;
+    background-color: var(--blueColor);
+    top: 180px;
+    border-radius: 10px;
+}
+
+.esquerda {
+    left: 20px;
+}
+
+.direita {
+    right: 20px;
+}
+
+.emojies {
+    transition: 400ms;
+    position: fixed;
+    z-index: 9999;
+    top: 10%;
+    height: 100px;
+    width: 70px;
+    background: transparent;
+    background-image: url("/emojes/reiRindo.png");
+    background-position: 50% 50%;
+}
+#player1-side {
+    left: 10%;
+    opacity: 0;
+}
+#player2-side {
+    right: 10%;
+    opacity: 0;
+}
+#btn-pause{
+    position: absolute;
+    width: 110px;
+    bottom: 30px;
+    left: 45%;
+    background-color: rgba(9, 114, 114, 0.253);
+    transition: 400ms;
+}
+
+#btn-pause:hover{
+    background-color: rgba(9, 114, 114, 0.900);
+}
+
+#modal {
+    display: block;
+    z-index: 9999;
+    backdrop-filter: blur(40px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#container {
+    display: block;
+    position: relative;
+    border: 1px solid var(--purpleColor);
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
+    height: 500px;
+    max-width: 370px;
+    margin: 8% auto;
+    padding: 30px;
+
+}
+
+
