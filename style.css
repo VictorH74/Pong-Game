@@ -176,6 +176,7 @@ button{
     position: absolute;
     font-size: 80px;
     top: 40%;
+    transform: translateX(-50%);
 }
 
 #buff{
