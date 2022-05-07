@@ -212,6 +212,7 @@ button{
 
 #ball {
     display: none;
+    z-index: 5;
     position: absolute;
     top: 240px;
     left: 475px;
@@ -272,6 +273,7 @@ button{
     left: 45%;
     background-color: rgba(9, 114, 114, 0.253);
     transition: 400ms;
+    z-index: 1;
 }
 
 #btn-pause:hover{
