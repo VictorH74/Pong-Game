@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Pong Game</title>
+
+    <style>
+        footer, footer a{
+            color: whitesmoke;
+        }
+
+        footer{
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,6 +35,10 @@
 
     <div id="player1-side" class="emojies"></div>
     <div id="player2-side" class="emojies"></div>
+
+    <footer>
+    </footer>
+
 
     <div id="modal">
         <div id="container">
@@ -80,16 +94,16 @@
                 <legend>Velocidade</legend>
 
                 <div id="speed-settings" class="settings">
-                    <div>
-                        <label for="player1-speed">Player 1</label>
+                    <div class="speed-settings-fields">
+                        <label for="player1-speed" class="title-label">Player 1</label>
                         <input id="player1-speed" onfocus="this.select();" type="number" min="1" value="7">
                     </div>
-                    <div>
-                        <label for="player2-speed">Player 2</label>
+                    <div class="speed-settings-fields">
+                        <label for="player2-speed" class="title-label">Player 2</label>
                         <input id="player2-speed" onfocus="this.select();" type="number" min="1" value="7">
                     </div>
-                    <div>
-                        <label for="ball-speed">Bola</label>
+                    <div class="speed-settings-fields">
+                        <label for="ball-speed" class="title-label">Bola</label>
                         <input id="ball-speed" onfocus="this.select();" type="number" min="1" value="6">
                     </div>
                 </div>
@@ -98,39 +112,39 @@
             <fieldset>
                 <legend>Teclas</legend>
                 <div id="keyboard-settings" class="settings">
-                    <label for="">Player 1</label>
+                    <label for="" class="title-label">Player 1</label>
                     <div class="keys-settings">
-                        <div>
+                        <div class="keys-settings-fields">
                             <label for="player1-keyup">Subir</label>
                             <input id="player1-keyup" onfocus="this.select();" type="text" value="w">
                         </div>
 
-                        <div>
+                        <div class="keys-settings-fields">
                             <label for="player1-keydown">Descer</label>
                             <input id="player1-keydown" onfocus="this.select();" type="text" value="s">
                         </div>
 
-                        <div>
+                        <div class="keys-settings-fields">
                             <label for="player1-keypause">Congelar</label>
                             <input id="player1-keypause" onfocus="this.select();" type="text" value="a">
                         </div>
                     </div>
 
 
-                    <label for="">Player 2</label>
+                    <label for="" class="title-label">Player 2</label>
 
                     <div class="keys-settings">
-                        <div>
+                        <div class="keys-settings-fields">
                             <label for="player2-keyup">Subir</label>
                             <input id="player2-keyup" onfocus="this.select();" type="text" value="arrowup">
                         </div>
 
-                        <div>
+                        <div class="keys-settings-fields">
                             <label for="player2-keydown">Descer</label>
                             <input id="player2-keydown" onfocus="this.select();" type="text" value="arrowdown">
                         </div>
 
-                        <div>
+                        <div class="keys-settings-fields">
                             <label for="player2-keypause">Congelar</label>
                             <input id="player2-keypause" onfocus="this.select();" type="text" value="arrowleft">
                         </div>
@@ -148,6 +162,11 @@
 		crossorigin="anonymous"></script>
         
     <script src="game.js"></script>
+
+    <script>
+        const date = new Date();
+        $("footer").append(`&copy; Create by <a href="https://github.com/VictorH74" target="_blank" >Victor Almeida</a> ${date.getFullYear()}`);
+    </script>
 </body>
 
 </html>
